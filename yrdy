@@ -1,0 +1,7 @@
+NetworkCredential nc =
+    new NetworkCredential(GetSetting("username"), GetSetting("password"));
+CredentialCache cache = new CredentialCache();
+
+cache.Add(requestUri, "Basic", nc);
+
+HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(requestUri);
